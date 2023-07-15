@@ -1,4 +1,4 @@
-# TF2 Weapon Generator
+# TF2 Auto Generator
 Generates a new TF2 weapon (a new .weaponcard) with ChatGPT. Because it uses such an advanced AI, the setup is a little finiky to many (don't worry, I'll provide a step-by-step guide). Look below to see the setup.
 
 # Setup
