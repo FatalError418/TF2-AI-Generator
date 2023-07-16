@@ -2,7 +2,8 @@
 Using ChatGPT and some python code, I've created this TF2 auto-generator which can currently generate a new TF2 weapon card. It's a bit harder to setup than most, but I can assure you it'll be worth it. Scroll down to the setup section for setup instructions.
 
 # Examples
-If you don't believe how good this is, here are some examples of the weapon generation (these aren't cherry-picked, I just used the first 5 weapon cards it generated): \n
+If you don't believe how good this is, here are some examples of the weapon generation (these aren't cherry-picked, I just used the first 5 weapon cards it generated):
+
 <img src="https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/1942f080-9f01-4e0b-9c23-8dbe5b27d012" width="200"/>
 ![The Thunderbolt Harpoon Minigun]()
 ![The Medi-Flare](https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/34ae155f-c418-4def-8aef-9fdccdfc13e4)
