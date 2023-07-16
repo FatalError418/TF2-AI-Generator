@@ -9,5 +9,11 @@ If you don't believe how good this is, here are some examples of the weapon gene
 <img src="https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/65e7a6b6-90db-4cab-b7e9-91c80186ac7e" width="400"/> <br />
 <img src="https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/51572c94-e077-47aa-80bc-a2822cc69dfa" width="400"/> <br />
 
+# Upcoming Updates
+- Patch Notes Generator
+- GPT-4 (Much better version of ChatGPT, update will release later this month)
+- AI Generated Icons
+- Map Idea Generator
+
 # How to get an OpenAI API Key
 To use this tool you'll need an OpenAI API Key (OpenAI owns ChatGPT). Do do that, go [here](https://platform.openai.com/account/api-keys), and assuming you don't have an account (if you do, just log in), tap 'Sign Up'. Enter your email address, enter a password (must be over 8 characters), verify the email, enter your name and birthday (you can use an alias/fake details if you want), and then enter your phone number which is used to verify you are a human. Once that is done, click on 'Create new secret key'. Enter the key name, for example 'tf-auto-generator'. Next, copy the key and paste it into a new notepad file. Save the file as 'OpenAI-API-Key' or something and place it wherever, for convenience's sake you could put it in the installed folder.
