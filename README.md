@@ -1,7 +1,15 @@
-# TF2 Auto Generator
-Generates a new TF2 weapon (a new .weaponcard) with ChatGPT. Because it uses such an advanced AI, the setup is a little finiky to many (don't worry, I'll provide a step-by-step guide). Look below to see the setup.
+# The TF2 Auto-Generator
+Using ChatGPT and some python code, I've created this TF2 auto-generator which can currently generate a new TF2 weapon card. It's a bit harder to setup than most, but I can assure you it'll be worth it. Scroll down to the setup section for setup instructions.
 
-# Setup
+# Examples
+If you don't believe how good this is, here are some examples of the weapon generation (these aren't cherry-picked, I just used the first 5 weapon cards it generated):
+![The Thunderbolt Harpoon Minigun](https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/1942f080-9f01-4e0b-9c23-8dbe5b27d012)
+![The Medi-Flare](https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/34ae155f-c418-4def-8aef-9fdccdfc13e4)
+![Dreamweaver](https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/9c5be52d-6f5d-41d3-bf85-d8fc71f799f1)
+![The Silent Sting](https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/65e7a6b6-90db-4cab-b7e9-91c80186ac7e)
+![Mind Bender](https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/51572c94-e077-47aa-80bc-a2822cc69dfa)
+
+# How to get an OpenAI API Key
 1. First of all, go to the top of this page. You should see 'Code' somewhere there. Click on it, and tap download ZIP. Once it's downloaded, unzip it and we can move onto step 2.
 2. We now need to get the OpenAI API key (OpenAI owns ChatGPT). Do do that, log in [here](https://platform.openai.com) and skip to step 4 if you already have an OpenAI account (or ChatGPT account), and otherwise continue to step 3.
 3. To create an account, head over to [OpenAI](https://platform.openai.com). You should see a sign in popup. Click on 'Sign Up', and put your details in. You'll need a phone number to verify you are human, so put that in or try to find a working temp phone number, which I have yet to find one that has not been used more than 2 times. Once you sign up, head on to step 4.
