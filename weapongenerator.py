@@ -19,9 +19,9 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
                 txt_api_key = file.read().strip()
                 # Use the api_key variable to access the data
                 api_key = txt_api_key
-        
-        log += "Please provide an API Key. For instructions on how to get an API key, go to my\nGitHub repo at https://github.com/FatalError418/TF2-Auto-Generator and scroll down to the\n'How to get an OpenAI API Key' section."
-        return log
+        else:
+            log += "Please provide an API Key. For instructions on how to get an API key, go to my\nGitHub repo at https://github.com/FatalError418/TF2-Auto-Generator and scroll down to the\n'How to get an OpenAI API Key' section."
+            return log
 
     openai.api_key = api_key
 
