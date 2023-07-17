@@ -26,3 +26,9 @@ This is quite complicated; I'll go through everything quite quickly. First, scro
 
 # How to get an OpenAI API Key
 To use this tool, you'll need an OpenAI API Key (OpenAI owns ChatGPT). To do that, go [here](https://platform.openai.com/account/api-keys), and assuming you don't have an account (if you do, just log in), tap 'Sign Up'. Enter your email address, enter a password (must be over 8 characters), verify the email, enter your name and birthday (you can use an alias/fake details if you want), and then enter your phone number, which is used to verify you are a human. Once that is done, click on 'Create new secret key'. Enter the key name, for example, 'tf-ai-generator'. Next, copy the key and paste it into a new Notepad file. Save the file as 'api_key' and place it in the TF2 AI Generator folder, by default 'C:\\Users\\{user}\\AppData\\Local\\Programs\\TF2 AI Generator' (or 'TF2-AI-Generator-main\\compile' file if you did manual setup). Make sure to replace {user} with your actual username. This isn't required, as you can just paste in the key once the app has started by putting it in the API Key field, but by placing your key in that file, you don't need to keep pasting the key in every time as the script accesses the file and grabs the API key from there.
+
+# Usage
+You've installed the generator, but how do you use it?
+
+## Weapon Generation
+To generate a weapon, launch the generator and go to the Weapon Generation tab. Make sure you supply a valid API key in the API key tab or inside the api_key.txt file as seen in the 'How to get an OpenAI API Key' section. You can now click on 'Generate Weapon Card'. This will generate a new .weaponcard file
