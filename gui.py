@@ -61,7 +61,7 @@ def run_weapon_generator():
         result_label.config(text="Result: " + result)
     except Exception as e:
         # Update the result_label with error information if any exception is raised
-        result_label.config(text="Error: " + str(e) + " Line: " + e.args.line)
+        result_label.config(text="Error: " + str(e))
 
 
 # Function to open weapon card creator website in web browser
