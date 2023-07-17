@@ -180,13 +180,19 @@ entry_type.grid(row=8, column=1)
 clear_type_button = tk.Button(weapon_generator_tab, text='Clear', command=lambda: clear_entry(entry_type))
 clear_type_button.grid(row=8, column=2)
 
-# Create 'Run' button which will run weapon generator script
+# Create a 'Generate Weapon Card' button which will run weapon generator script
 run_button = tk.Button(weapon_generator_tab, text="Generate Weapon Card", command=run_weapon_generator)
 run_button.grid(row=9, column=0, columnspan=3)
 
 # Create label for displaying results or error messages
 result_label = tk.Label(weapon_generator_tab, text="")
 result_label.grid(row=10, column=0, columnspan=3)
+
+combobox_power_tooltip = Tooltip(combobox_power, "How powerful is this weapon, attribute wise? Clear this value to let the AI decide, although it will lean towards more balanced.")
+text_weapon_idea_tooltip = Tooltip(text_weapon_idea, "What should the weapon be about? The weapon idea which will be fed to the AI and if a weapon idea is provided it will try to generate a weapon based on it.")
+combobox_class_tooltip = Tooltip(combobox_class, "What class can use this weapon? Clear this value to use a random class.")
+combobox_slot_tooltip = Tooltip(combobox_slot, "What slot does this weapon go in? PDA is what the spy disguise kit and engineer construction and deconstruction kits are. Clear this value to use a random slot.")
+entry_type_tooltip = Tooltip(entry_type, "What type would this weapon fall into? For example, you could use 'Shotgun' or 'Wrench'. Feel free to use unique types, one example from the base game is 'Non-Milk Substance' for the Scout's 'Mad Milk'.")
 
 # Run the Tkinter main loop
 window.mainloop()
