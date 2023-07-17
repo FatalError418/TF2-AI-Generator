@@ -118,66 +118,71 @@ notebook.add(weapon_generator_tab, text="Weapon Generator")
 heading_label = tk.Label(weapon_generator_tab, text="Weapon Generator", font=("Arial", 16, "bold"))
 heading_label.grid(row=0, column=0, columnspan=3)
 
-description_label = tk.Label(weapon_generator_tab, text="Generate custom TF2 weapon cards using ChatGPT!\nClear a value to allow the AI to choose. All values are optional.\nOnce the weapon is generated, go to the TF2 weapon card\ncreator, scroll down to load, and load\nthe newly created '.weaponcard', which is created in the 'weaponcards' folder.\nSort by date to get the newest weapon card.\nIf it doesn't work first try, remember to:\n1. Provide the correct API key, double check it's actually the correct one.\n2. Try regenerating the weapon card, sometimes it doesn't work first time.")
+description_label = tk.Label(weapon_generator_tab, text="Generate custom TF2 weapon cards using ChatGPT!\nClear a value to allow the AI to choose. All values are optional.")
 description_label.grid(row=1, column=0, columnspan=3)
+
+# Create hyperlinked label to open the github page
+link_label = tk.Label(weapon_generator_tab, text="How do I use this?", fg="blue", cursor="hand2")
+link_label.grid(row=2, column=0, columnspan=3)
+link_label.bind("<Button-1>", open_weapon_card_website)
 
 # Create hyperlinked label to open weapon card creator website
 link_label = tk.Label(weapon_generator_tab, text="Go to the TF2 Weapon Card Creator", fg="blue", cursor="hand2")
-link_label.grid(row=2, column=0, columnspan=3)
+link_label.grid(row=3, column=0, columnspan=3)
 link_label.bind("<Button-1>", open_weapon_card_website)
 
 # Create widgets for form fields and bind them with clear functions
 label_power = tk.Label(weapon_generator_tab, text="Power:")
-label_power.grid(row=3, column=0, sticky=tk.W)
+label_power.grid(row=4, column=0, sticky=tk.W)
 
 combobox_power = ttk.Combobox(weapon_generator_tab, values=["Extremely Weak", "Very Weak", "Weak", "Balanced", "Strong", "OP", "Extremely OP"], state="readonly")
-combobox_power.grid(row=3, column=1)
+combobox_power.grid(row=4, column=1)
 clear_power_button = tk.Button(weapon_generator_tab, text='Clear', command=lambda: clear_combobox(combobox_power))
-clear_power_button.grid(row=3, column=2)
+clear_power_button.grid(row=4, column=2)
 
 # Create widgets for form fields and bind them with clear functions
 label_weapon_idea = tk.Label(weapon_generator_tab, text="Weapon Idea:")
-label_weapon_idea.grid(row=4, column=0, sticky=tk.W)
+label_weapon_idea.grid(row=5, column=0, sticky=tk.W)
 
 text_weapon_idea = tk.Text(weapon_generator_tab, height=5, width=30)
-text_weapon_idea.grid(row=4, column=1, pady=5)
+text_weapon_idea.grid(row=5, column=1, pady=5)
 clear_weapon_idea_button = tk.Button(weapon_generator_tab, text='Clear', command=lambda: clear_entry(text_weapon_idea))
-clear_weapon_idea_button.grid(row=4, column=2)
+clear_weapon_idea_button.grid(row=5, column=2)
 
 # Create widgets for form fields and bind them with clear functions
 label_class = tk.Label(weapon_generator_tab, text="Class:")
-label_class.grid(row=5, column=0, sticky=tk.W)
+label_class.grid(row=6, column=0, sticky=tk.W)
 
 combobox_class = ttk.Combobox(weapon_generator_tab, values=["Scout", "Soldier", "Pyro", "Demoman", "Heavy", "Engineer", "Medic","Sniper", "Spy"], state="readonly")
-combobox_class.grid(row=5, column=1)
+combobox_class.grid(row=6, column=1)
 clear_class_button = tk.Button(weapon_generator_tab, text='Clear', command=lambda: clear_combobox(combobox_class))
-clear_class_button.grid(row=5, column=2)
+clear_class_button.grid(row=6, column=2)
 
 # Create widgets for form fields and bind them with clear functions
 label_slot = tk.Label(weapon_generator_tab, text="Slot:")
-label_slot.grid(row=6, column=0, sticky=tk.W)
+label_slot.grid(row=7, column=0, sticky=tk.W)
 
 combobox_slot = ttk.Combobox(weapon_generator_tab, values=["Primary", "Secondary", "Melee", "PDA"], state="readonly")
-combobox_slot.grid(row=6, column=1)
+combobox_slot.grid(row=7, column=1)
 clear_slot_button = tk.Button(weapon_generator_tab, text='Clear', command=lambda: clear_combobox(combobox_slot))
-clear_slot_button.grid(row=6, column=2)
+clear_slot_button.grid(row=7, column=2)
 
 # Create widgets for form fields and bind them with clear functions
 label_type = tk.Label(weapon_generator_tab, text="Type:")
-label_type.grid(row=7, column=0, sticky=tk.W)
+label_type.grid(row=8, column=0, sticky=tk.W)
 
 entry_type = tk.Entry(weapon_generator_tab)
-entry_type.grid(row=7, column=1)
+entry_type.grid(row=8, column=1)
 clear_type_button = tk.Button(weapon_generator_tab, text='Clear', command=lambda: clear_entry(entry_type))
-clear_type_button.grid(row=7, column=2)
+clear_type_button.grid(row=8, column=2)
 
 # Create 'Run' button which will run weapon generator script
 run_button = tk.Button(weapon_generator_tab, text="Generate Weapon Card", command=run_weapon_generator)
-run_button.grid(row=8, column=0, columnspan=3)
+run_button.grid(row=9, column=0, columnspan=3)
 
 # Create label for displaying results or error messages
 result_label = tk.Label(weapon_generator_tab, text="")
-result_label.grid(row=9, column=0, columnspan=3)
+result_label.grid(row=10, column=0, columnspan=3)
 
 # Run the Tkinter main loop
 window.mainloop()
