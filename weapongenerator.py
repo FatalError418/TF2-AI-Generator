@@ -14,13 +14,14 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
     log = ""
 
     if api_key == "" or api_key == "":
-        if os.path.isfile(file_path):
-            with open(file_path, "r") as file:
+        if os.path.isfile("api_key.txt"):
+            with open("api_key.txt", "r") as file:
                 txt_api_key = file.read().strip()
                 # Use the api_key variable to access the data
                 api_key = txt_api_key
+                log += "API Key Has Been Provided Through api_key.txt file. \n"
         else:
-            log += "Please provide an API Key. For instructions on how to get an API key, go to my\nGitHub repo at https://github.com/FatalError418/TF2-Auto-Generator and scroll down to the\n'How to get an OpenAI API Key' section."
+            log += "Please provide an API Key. For instructions on how to get an API key, go to my\nGitHub repo at https://github.com/FatalError418/TF2-Auto-Generator and scroll down to the\n'How to get an OpenAI API Key' section. \n"
             return log
 
     openai.api_key = api_key
@@ -82,45 +83,16 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
       "rarity": "Item rarity, for example Normal (for stock items), Unique, Genuine, Strange, Vintage, Unusual, etc. 
       If it's something other than unique, add the rarity before the item name, for example 'Strange Item Name'",
     }
-    Make sure to stick to the format, don't stray from it. Generate a new weapon. Attributes should order: Positive, then negative, then neutral. From top to bottom in that order. 
+    Make sure to stick to the format, don't stray from it.
     Remember to not use the attribute example templates I provided in the above formatting tutorial, those are just examples on what you can do.
-    You don't always need to use neutral Attributes, but do use neutral descriptions from time to time (describing something you do with it, or a little joke: NOT A CATCHLINE JOKE, HOWEVER!!!, also only do a description / joke if it really works well and is not cringey. Only use a joke if it won't make people cringe.).
     Try to use numbers not something general like instead of 'Lower Max Health' it'd be '-10 max health'. It should be very specific. Also, instead of just '50% slower movement speed' go '50% slower
     movement speed while active', aka be REALLY specific. 
     Don't just recreate valve's weapon abilities. 
     Also, instead of going '-20% damage to players' you might go '20% less damage to players'. Everything should start with a capital letter except for the attribute types, those MUST be lowercase.
-    ALSO, only use " for the formatting, so for example in the attributes DO NOT do 'attributes', do "attributes". And inside (for example the name value), use '. For example don't go 'name': 'Example "item"', do "name": "Example 'item'"
-    If you need a small negative, use 'No random critical hits'.
+    So instead of saying 'dealing extreme damage' you might go 'dealing 250% more damage'. Do not ever be vauge.
     Make the weapon decently new, by that I mean it spices up the gameplay a little with it, so not just a fancy reskin.
+    Use neutral attributes to explain what the weapon does in more detail.
     Make sure this is competely unique, therefore don't copy already existing weapons. Make sure to never stray from json formatting. Here is an example:
-
-    {
-      "weapon_idea": "A wrench which generates metal when hitting enemies, but buildings have less health and can have more status effects inflicted upon them."
-      "classes": ["Engineer"],
-      "slot": "Melee",
-      "name": "Strange Frankinwrench",
-      "level": "Level 25 Nightmare Wrench (Melee)",
-      "attributes": {
-        "0": {
-            "name": "All damage dealt (including turrets) is converted to metal",
-            "type": "positive"
-        }
-        "1": {
-            "name": "Buildings can have bleed and other similar status effects inflicted upon them",
-            "type": "negative"
-        }
-        "2": {
-            "name": "Buildings have 33% less health",
-            "type": "negative"
-        }
-        "3": {
-            "name": "Who needs metal, electronic turrets when you have sentient living flesh abominations stitched together from your enemies flesh?",
-            "type": "neutral"
-        }
-      },
-      "icon": "Southern_Hospitality",
-      "rarity": "Strange"
-    }
 
     Now create a weapon. Some things to note: ''' + getRequirments() + '''Remember to be extremely clear with the attributes.'''
 
@@ -146,7 +118,7 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
         
         # Check if the response was successful
         if response.status_code != 200:
-            log += f"Failed to retrieve page: {response.status_code}. Using default icon."
+            log += f"Failed to retrieve page: {response.status_code}. Using default icon. \n"
 
             url = "https://wiki.teamfortress.com/wiki/File:Item_icon_Counterfeit_Billycock.png"
             response = requests.get(url)
@@ -165,7 +137,7 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
 
         # Check if the response was successful
         if response.status_code != 200:
-            log += f"Failed to retrieve image: {response.status_code}"
+            log += f"Failed to retrieve image: {response.status_code} \n"
             return None
 
         img = Image.open(io.BytesIO(response.content))
@@ -275,6 +247,6 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
     with open(file_path, "w") as file:
         file.write(new_card_data)
 
-    log += "Weapon generated successfully."
+    log += "Weapon generated successfully. \n"
 
     return log
