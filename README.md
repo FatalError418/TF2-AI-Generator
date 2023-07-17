@@ -3,11 +3,11 @@ Using ChatGPT and some Python code, I've created this TF2 AI generator, which ca
 
 # Examples
 If you don't believe how good this is, here are some examples of the weapon generation (these aren't cherry-picked; I just used the first 5 weapon cards it generated): <br />
-<img src="https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/1942f080-9f01-4e0b-9c23-8dbe5b27d012" width="300"/> <br />
-<img src="https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/34ae155f-c418-4def-8aef-9fdccdfc13e4" width="300"/> <br />
-<img src="https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/9c5be52d-6f5d-41d3-bf85-d8fc71f799f1" width="300"/> <br />
-<img src="https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/65e7a6b6-90db-4cab-b7e9-91c80186ac7e" width="300"/> <br />
-<img src="https://github.com/FatalError418/TF2-Auto-Generation/assets/139549531/51572c94-e077-47aa-80bc-a2822cc69dfa" width="300"/> <br />
+<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/29dce63f-49f9-4aa5-a2fa-7bf092ce471c" width="300"/> <br />
+<img src="(https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/5deff458-d79c-4315-85ae-4a73a33340e9)" width="300"/> <br />
+<img src="(https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/b5e08907-67d8-4aa0-82bd-85e37114bd9e)" width="300"/> <br />
+<img src="(https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/049d760b-0ca8-4209-9f60-81aea1216ddb)" width="300"/> <br />
+<img src="(https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/737e84ba-061c-4bf4-ae89-7c08d7c26aa9)" width="300"/> <br />
 
 # Upcoming Updates
 - Patch Notes Generator
