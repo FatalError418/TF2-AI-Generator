@@ -86,6 +86,7 @@ def toggle_visibility():
 # Create main Tkinter window
 window = tk.Tk()
 window.title("TF2 AI Generator")
+window.iconbitmap('tf2_icon.ico')
 window.resizable(False, False)
 
 notebook = ttk.Notebook(window)
