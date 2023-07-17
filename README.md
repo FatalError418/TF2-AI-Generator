@@ -43,4 +43,5 @@ If you run into a problem, first go through the list of steps below before repor
 5. Checking if you still have API credits left (if you don't have any left, you can buy some more at [OpenAI](https://platform.openai.com)
 6. Restarting the app
 7. Restarting your computer
+   
 If all those steps fail, report an issue and I'll try to fix it quickly.
