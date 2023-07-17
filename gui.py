@@ -86,7 +86,9 @@ def toggle_visibility():
 # Create main Tkinter window
 window = tk.Tk()
 window.title("TF2 AI Generator")
-window.iconbitmap('tf2_icon.ico')
+exe_dir = sys._MEIPASS  # Get the temporary directory path
+icon_path = os.path.join(exe_dir, 'tf2_icon.ico')  # Build the absolute path to the icon file
+window.iconbitmap(icon_path)
 window.resizable(False, False)
 
 notebook = ttk.Notebook(window)
