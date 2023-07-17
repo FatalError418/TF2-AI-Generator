@@ -68,6 +68,10 @@ def run_weapon_generator():
 def open_weapon_card_website(event):
     webbrowser.open("https://gamepro5.com/programs/tf2_weapon_card_creator/")
 
+# Function to open the github page.
+def open_github_page(event):
+    webbrowser.open("https://github.com/FatalError418/TF2-AI-Generator/")
+
 # Function to clear the value of a Combobox
 def clear_combobox(combobox):
     combobox.set('')
@@ -129,7 +133,7 @@ link_label.bind("<Button-1>", open_weapon_card_website)
 # Create hyperlinked label to open weapon card creator website
 link_label = tk.Label(weapon_generator_tab, text="Go to the TF2 Weapon Card Creator", fg="blue", cursor="hand2")
 link_label.grid(row=3, column=0, columnspan=3)
-link_label.bind("<Button-1>", open_weapon_card_website)
+link_label.bind("<Button-1>", open_github_page)
 
 # Create widgets for form fields and bind them with clear functions
 label_power = tk.Label(weapon_generator_tab, text="Power:")
