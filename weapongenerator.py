@@ -1,4 +1,5 @@
 import os
+import subprocess
 import openai
 import json
 import requests
@@ -11,18 +12,19 @@ from bs4 import BeautifulSoup
 
 def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type="", attributes="", icon="", rarity="", power=""):
 
-    log = ""
+    log = []
 
     if api_key == "" or api_key == "":
         if os.path.isfile("api_key.txt"):
             with open("api_key.txt", "r") as file:
                 txt_api_key = file.read().strip()
-                # Use the api_key variable to access the data
+                # Use the api_key variable to access the datas
                 api_key = txt_api_key
-                log += "API Key Has Been Provided Through api_key.txt file. \n"
+                log.append("API Key Has Been Provided Through The Last Saved API Key (api_key.txt file.)")
         else:
-            log += "Please provide an API Key. For instructions on how to get an API key, go to my\nGitHub repo at https://github.com/FatalError418/TF2-Auto-Generator and scroll down to the\n'How to get an OpenAI API Key' section. \n"
-            return log
+            log.append("Please provide an API Key. For instructions on how to get an API key, go to my") 
+            log.append("GitHub repo at https://github.com/FatalError418/TF2-AI-Generator#how-to-get-an-openai-api-key.")
+            return "\n".join(log)
 
     openai.api_key = api_key
 
@@ -35,12 +37,12 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
         if class_:
             string += f"You must use the following class: {class_}. "
         elif (weapon_idea == "" or weapon_idea == None) and (type == "" or type == None):
-            string += f"Use the randomly picked class " + random.choice(["Scout", "Soldier", "Pyro", "Demoman", "Heavy", "Engineer", "Medic", "Sniper", "Spy"]) + ", or one that fits with other metioned requirements. "
+            string += f"Use the randomly picked class " + random.choice(["Scout", "Soldier", "Pyro", "Demoman", "Heavy", "Engineer", "Medic", "Sniper", "Spy"])
 
         if slot:
             string += f"You must use the following slot: {slot}. Don't say it's a secondary weapon when it acts like a primary one, instead make it act like a secondary weapon (assuming it is set as secondary)."
         elif (weapon_idea == "" or weapon_idea == None) and (type == "" or type == None):
-            string += f"Use the randomly picked slot " + random.choice(["Primary", "Secondary", "Melee"]) + ", or one that fits with other metioned requirements. Don't say it's a secondary weapon when it acts like a primary one, instead make it act like a secondary weapon (assuming it is set as secondary)."
+            string += f"Use the randomly picked slot " + random.choice(["Primary", "Secondary", "Melee"]) + ". Don't say it's a secondary weapon when it acts like a primary one, instead make it act like a secondary weapon (assuming it is set as secondary)."
 
         if level:
             string += f"You must use the following level: {level}. "
@@ -63,25 +65,41 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
         return string
 
     prompt = '''
-    Generate a new TF2 weapon that is unique with an interesting idea with this format:
+    Generate a new fictional TF2 weapon card that is unique with an interesting idea. You should format your output in json format. Here is an example on how to do it, but do not however directly copy this.
     {
-      "weapon_idea": "Weapon idea, for example 'a medi gun which damages the medic when healing in exchange for a much higher heal speed and faster ubercharge.'. Don't use that exactly, however."
-      "classes": ["Class 1", "Optional Class 2, only if both classes can normally use the weapon type."],
-      "slot": "Item slot, so primary, secondary, or melee.",
-      "name": "The name of the item",
-      "level": "Level x Item Type (Slot), for example: 'Level 25 Medi Gun (Primary)'.",
+      "weapon_idea": "A shotgun for the engineer which repairs you and all buildings by amount of damage dealt on hit, but buildings cost extra metal to repair and you have less max health."
+      "classes": ["Engineer"],
+      "slot": "Primary",
+      "name": "The Rampager",
+      "level": "Level 25 Shotgun",
       "attributes": {
         "0": {
-            "name": "This is an example of an attribute. You can haved neutral, positive, and negative attributes. 
-            TIP: You can use neutral attributes to describe abilities, 
-            the item, or how to use it. If there is a clear positive or negative side to an attribute, 
-            don't label it as neutral. Have as many of these attributes as you want.",
-            "type": "type"
+            "name": "On Hit: Damage dealt is returned as health and any extra health evenly distributed to all buildings currently built",
+            "type": "positive"
+        },
+        "1": {
+            "name": "+33% clip size",
+            type: "positive"
+        },
+        "2": {
+            "name": "+25% metal cost to repair buildings"
+            "type": "negative"
+        },
+        "3": {
+            "name": "50% slower repair speed",
+            "type": "negative"
+        },
+        "4": {
+            "name": "25 less max health",
+            "type": "negative"
+        },
+        "5": {
+            "name": "Our previous motto was 'Shoot to kill'. Now it's 'Shoot to survive'.",
+            "type": "neutral"
         }
       },
-      "icon": "Already existing weapon. This will go into the file, so for example don't go Medi Gun or tf_medi_gun do Medi_Gun.",
-      "rarity": "Item rarity, for example Normal (for stock items), Unique, Genuine, Strange, Vintage, Unusual, etc. 
-      If it's something other than unique, add the rarity before the item name, for example 'Strange Item Name'",
+      "icon": "Frontier_Justice",
+      "rarity": "Unique"
     }
     Make sure to stick to the format, don't stray from it.
     Remember to not use the attribute example templates I provided in the above formatting tutorial, those are just examples on what you can do.
@@ -92,6 +110,13 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
     So instead of saying 'dealing extreme damage' you might go 'dealing 250% more damage'. Do not ever be vauge.
     Make the weapon decently new, by that I mean it spices up the gameplay a little with it, so not just a fancy reskin.
     Use neutral attributes to explain what the weapon does in more detail.
+    For the icon, don't go 'Southern Hospitality' or 'tf_sothern_hospitality', use 'Southern_Hospititality'.
+    Don't go 'Positive' or 'Negative' or 'Neutral', instead go 'positive' or 'negative' or 'neutral'.
+    Make sure to use uncommon items, but still ones that actually exist!
+    If the slot is a secondary weapon, MAKE SURE TO ACTUALLY MAKE IT A SECONDARY WEAPON. It should not ever be like a primary weapon if it is a secondary.
+    On the example, that final neutral one is a description of how to use it, what it can be used for, or just a funny joke. For example, another one for heavy gloves which deal crits to airborn enemies could be: 'With these boxing gloves you can finally pop helium balloons. DISCLAIMER: Popping said balance may have some legal implications, such as accusation of murder.'
+    Be unqiue, don't copy what I did in my example.
+    You should only output the JSON.
     Make sure this is competely unique, therefore don't copy already existing weapons. Make sure to never stray from json formatting. Here is an example:
 
     Now create a weapon. Some things to note: ''' + getRequirments() + '''Remember to be extremely clear with the attributes.'''
@@ -118,7 +143,7 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
         
         # Check if the response was successful
         if response.status_code != 200:
-            log += f"Failed to retrieve page: {response.status_code}. Using default icon. \n"
+            log.append(f"Failed to retrieve page: {response.status_code}. Using default icon.")
 
             url = "https://wiki.teamfortress.com/wiki/File:Item_icon_Counterfeit_Billycock.png"
             response = requests.get(url)
@@ -137,7 +162,7 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
 
         # Check if the response was successful
         if response.status_code != 200:
-            log += f"Failed to retrieve image: {response.status_code} \n"
+            log.append(f"Failed to retrieve image: {response.status_code}")
             return None
 
         img = Image.open(io.BytesIO(response.content))
@@ -180,7 +205,7 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
         "image": "data:image/png;base64,''' + getIconFromItemName(data["icon"]) + '''",
         "name": "''' + data["name"] + '''",
         "rarity": "''' + getHexFromRarityString(data["rarity"]) + '''",
-        "level": "''' + data["level"] + '''",
+        "level": "''' + data["level"] + ''' (''' + data["slot"] + ''')",
         "limitedEdition": false,
         "strangeParts": {},
         "showStrangeCounter": false,
@@ -247,6 +272,10 @@ def create_weapon(api_key="", weapon_idea="", class_="", slot="", level="", type
     with open(file_path, "w") as file:
         file.write(new_card_data)
 
-    log += "Weapon generated successfully. \n"
+    log.append("Weapon generated successfully.")
+    log.append(f"Go to '{os.getcwd()}.weaponcard'")
+    log.append("to access the newly created .weaponcard.")
+    log.append("You can then tap 'Load' in the TF2 weapon card creator and open the newly created file!")
+    subprocess.Popen(f'explorer "{os.getcwd()}\\weaponcards"')
 
-    return log
+    return "\n".join(log)
