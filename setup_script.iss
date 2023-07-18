@@ -24,7 +24,7 @@ LicenseFile=LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 PrivilegesRequired=lowest
 OutputDir=setup
-OutputBaseFilename=TF2 AI Generator Setup {MyAppVersion}
+OutputBaseFilename=TF2 AI Generator Setup {#MyAppVersion}
 SetupIconFile=tf2_icon.ico
 Compression=lzma
 SolidCompression=yes
