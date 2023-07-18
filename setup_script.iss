@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "TF2 AI Generator"
-#define MyAppVersion "0.1.0"
+#define MyAppVersion "0.1.1"
 #define MyAppPublisher "FatalError418"
 #define MyAppURL "https://github.com/FatalError418/TF2-AI-Generator/"
 #define MyAppExeName "app.exe"
@@ -24,7 +24,7 @@ LicenseFile=LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 PrivilegesRequired=lowest
 OutputDir=setup
-OutputBaseFilename=TF2 AI Generator Setup 0.1.0
+OutputBaseFilename=TF2 AI Generator Setup {MyAppVersion}
 SetupIconFile=tf2_icon.ico
 Compression=lzma
 SolidCompression=yes
