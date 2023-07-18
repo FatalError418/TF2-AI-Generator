@@ -1,5 +1,5 @@
 # The TF2 AI Generator
-Using ChatGPT and some Python code, I've created this TF2 AI generator, which can currently generate a new TF2 weapon card. It's a bit harder to set up than most, but I can assure you it'll be worth it. Scroll down to the setup section for setup instructions. Currently, it can only generate new weapon cards, but in the future, it'll be able to generate more, so keep an eye out! **NOTE: For the time being, this only works on Windows!**
+Using ChatGPT and some Python code, I've created this TF2 AI generator, which can currently generate a new TF2 weapon card. It's a bit harder to set up than most, but I can assure you it'll be worth it. Scroll down to the setup section for setup instructions. Currently, it can only generate new weapon cards, but in the future, it'll be able to generate more, so keep an eye out! **NOTE: For the time being, this only works on Windows! It has only been tested on Windows 10, but it may work on Windows 11 fine.**
 
 # Examples
 If you don't believe how good this is, here are some examples of the weapon generation (these aren't cherry-picked; I just used the first 5 weapon cards it generated): <br />
@@ -42,7 +42,7 @@ If you run into a problem, first go through the list of steps below before repor
 2. Check for a valid OpenAI API Key (you can get one by following the 'How to get an OpenAI API Key' section)
 3. Regenerating the weapon a few times (sometimes the AI fails generating it, if so, try again)
 4. Checking the values you set (if they aren't clear or strangely worded it may fail)
-5. Checking if you still have API credits left (if you don't have any left, you can buy some more at [OpenAI](https://platform.openai.com)
+5. Checking if you still have API credits left (if you don't have any left, you can buy some more at [OpenAI](https://platform.openai.com))
 6. Restarting the app
 7. Restarting your computer
    
