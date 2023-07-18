@@ -17,6 +17,7 @@ If you don't believe how good this is, here are some examples of the weapon gene
 - Mac and Linux Support
 - Ability to create working weapons which can be imported into a server!
 - Website
+- Not having to go through the weapon card creator
 
 # Setup
 To use the generator, there are two ways to install it. It is recommended that you use the auto-setup, as it is much simpler, but if you prefer, you can set it up manually.
