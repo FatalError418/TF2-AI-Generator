@@ -70,7 +70,7 @@ def open_weapon_card_website(event):
 
 # Function to open the github page.
 def open_github_page(event):
-    webbrowser.open("https://github.com/FatalError418/TF2-AI-Generator/")
+    webbrowser.open("https://github.com/FatalError418/TF2-AI-Generator#usage")
 
 # Function to clear the value of a Combobox
 def clear_combobox(combobox):
@@ -86,6 +86,10 @@ def toggle_visibility():
         entry_api_key.config(show='*')
     else:
         entry_api_key.config(show='')
+
+def save_api_key():
+    with open("api_key.txt", 'a') as file:
+        file.write(entry_api_key.get())
 
 # Create main Tkinter window
 window = tk.Tk()
@@ -114,6 +118,9 @@ entry_api_key.pack()
 toggle_button = tk.Button(api_key_tab, text='Toggle Visibility', command=toggle_visibility)
 toggle_button.pack()
 
+save_key_button = tk.Button(api_key_tab, text='Save API Key', command=save_api_key)
+save_key_button.pack()
+
 # Create Weapon Generator tab
 weapon_generator_tab = ttk.Frame(notebook)
 notebook.add(weapon_generator_tab, text="Weapon Generator")
@@ -128,12 +135,12 @@ description_label.grid(row=1, column=0, columnspan=3)
 # Create hyperlinked label to open the github page
 link_label = tk.Label(weapon_generator_tab, text="How do I use this?", fg="blue", cursor="hand2")
 link_label.grid(row=2, column=0, columnspan=3)
-link_label.bind("<Button-1>", open_weapon_card_website)
+link_label.bind("<Button-1>", open_github_page)
 
 # Create hyperlinked label to open weapon card creator website
-link_label = tk.Label(weapon_generator_tab, text="Go to the TF2 Weapon Card Creator", fg="blue", cursor="hand2")
-link_label.grid(row=3, column=0, columnspan=3)
-link_label.bind("<Button-1>", open_github_page)
+link_label_2 = tk.Label(weapon_generator_tab, text="Go to the TF2 Weapon Card Creator", fg="blue", cursor="hand2")
+link_label_2.grid(row=3, column=0, columnspan=3)
+link_label_2.bind("<Button-1>", open_weapon_card_website)
 
 # Create widgets for form fields and bind them with clear functions
 label_power = tk.Label(weapon_generator_tab, text="Power:")
@@ -193,6 +200,7 @@ text_weapon_idea_tooltip = Tooltip(text_weapon_idea, "What should the weapon be 
 combobox_class_tooltip = Tooltip(combobox_class, "What class can use this weapon? Clear this value to use a random class.")
 combobox_slot_tooltip = Tooltip(combobox_slot, "What slot does this weapon go in? PDA is what the spy disguise kit and engineer construction and deconstruction kits are. Clear this value to use a random slot.")
 entry_type_tooltip = Tooltip(entry_type, "What type would this weapon fall into? For example, you could use 'Shotgun' or 'Wrench'. Feel free to use unique types, one example from the base game is 'Non-Milk Substance' for the Scout's 'Mad Milk'.")
+result_label_tooltip = Tooltip(result_label, "If you ran into a problem, try regenerating.")
 
 # Run the Tkinter main loop
 window.mainloop()
