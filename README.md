@@ -2,7 +2,7 @@
 Using ChatGPT and some Python code, I've created this TF2 AI generator, which can currently generate a new TF2 weapon card. It's a bit harder to set up than most, but I can assure you it'll be worth it. Scroll down to the setup section for setup instructions. Currently, it can only generate new weapon cards, but in the future, it'll be able to generate more, so keep an eye out! **NOTE: For the time being, this only works on Windows! It has only been tested on Windows 10, but it may work on Windows 11 fine.**
 
 # Examples
-If you don't believe how good this is, here are some examples of the weapon generation (these aren't cherry-picked; I just used the first 5 weapon cards it generated):
+If you don't believe how good this is, here are some examples of the weapon generation (these aren't cherry-picked; I just used the first 5 weapon cards it generated): <br />
 <img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/abdd61fc-560c-48ac-9a06-b8e8ebbaf06f" width="300"/> <br />
 <img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/095142ce-962a-46be-b555-5815890b7efa" width="300"/> <br />
 <img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/9f3bcca6-947e-41f1-a6fc-cb15d2a594cf" width="300"/> <br />
