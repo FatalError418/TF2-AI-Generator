@@ -2,12 +2,12 @@
 Using ChatGPT and some Python code, I've created this TF2 AI generator, which can currently generate a new TF2 weapon card. It's a bit harder to set up than most, but I can assure you it'll be worth it. Scroll down to the setup section for setup instructions. Currently, it can only generate new weapon cards, but in the future, it'll be able to generate more, so keep an eye out! **NOTE: For the time being, this only works on Windows! It has only been tested on Windows 10, but it may work on Windows 11 fine.**
 
 # Examples
-If you don't believe how good this is, here are some examples of the weapon generation (these aren't cherry-picked; I just used the first 5 weapon cards it generated): <br />
-<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/29dce63f-49f9-4aa5-a2fa-7bf092ce471c" width="300"/> <br />
-<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/5deff458-d79c-4315-85ae-4a73a33340e9" width="300"/> <br />
-<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/b5e08907-67d8-4aa0-82bd-85e37114bd9e" width="300"/> <br />
-<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/049d760b-0ca8-4209-9f60-81aea1216ddb" width="300"/> <br />
-<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/737e84ba-061c-4bf4-ae89-7c08d7c26aa9" width="300"/> <br />
+If you don't believe how good this is, here are some examples of the weapon generation (these aren't cherry-picked; I just used the first 5 weapon cards it generated):
+<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/abdd61fc-560c-48ac-9a06-b8e8ebbaf06f" width="300"/> <br />
+<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/095142ce-962a-46be-b555-5815890b7efa" width="300"/> <br />
+<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/9f3bcca6-947e-41f1-a6fc-cb15d2a594cf" width="300"/> <br />
+<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/19c4fcff-0642-4b6f-9039-3fe789d448ca" width="300"/> <br />
+<img src="https://github.com/FatalError418/TF2-AI-Generator/assets/139549531/ba1cd6e3-745c-4464-9369-58b66293c570" width="300"/> <br />
 
 # Upcoming Updates
 - Patch Notes Generator
