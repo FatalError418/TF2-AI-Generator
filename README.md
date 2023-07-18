@@ -15,6 +15,8 @@ If you don't believe how good this is, here are some examples of the weapon gene
 - AI-Generated Icons
 - Map Idea Generator
 - Mac and Linux Support
+- Ability to create working weapons which can be imported into a server!
+- Website
 
 # Setup
 To use the generator, there are two ways to install it. It is recommended that you use the auto-setup, as it is much simpler, but if you prefer, you can set it up manually.
